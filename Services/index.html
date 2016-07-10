@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+LALLALALLALALALLALALALLA
+<input type="text" id="1488" size="40">
+
+<button onclick=onBtnClick(getElementById(1488).value)> Кнопка с рисунком</button>
+<button onclick=onBtnClick1(getElementById(1488).value)> Кнопка с рисунком</button>
+
+<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+<script>
+    function onBtnClick1 (data){
+        console.log(data);
+        socket.emit('my other event', { my: 'Ihor HUI' });
+    }
+
+    var socket = io('http://localhost');
+    //socket.on('news', function (data) {
+        //console.log(data);
+    function onBtnClick (data){
+        console.log(data);
+        socket.emit('my other event', { my: data });
+    }
+
+    //});
+</script>
+</body>
+</html>
